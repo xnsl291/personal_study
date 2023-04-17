@@ -19,14 +19,14 @@ public class JavaStudy04
     public static int get_input(String question , int year)
     {
         String gender = "";
-        while(!gender.equalsIgnoreCase("f") && !gender.equalsIgnoreCase("m"))
+        while(!"f".equalsIgnoreCase(gender) && !"m".equalsIgnoreCase(gender))
         {
             System.out.printf(question);
             gender = scan.next();
         }
 
         int int_gender = (int)(year/2000)>0?3:1;
-        int_gender += gender.equalsIgnoreCase("m")?0:1;
+        int_gender += "m".equalsIgnoreCase(gender)?0:1;
 
         return int_gender;
     }
@@ -59,6 +59,6 @@ public class JavaStudy04
         int gender = get_input("성별을 입력해 주세요.(m/f):" , Integer.parseInt(year));
 
         /*yy+mm+dd - 성별+랜덤 6자리 숫자*/
-        System.out.printf("%s%02d%02d-%d%06d",year.substring(2,4),month,day,gender,rand.nextInt(1000000));
+        System.out.printf("%s%02d%02d-%d%06d",year.substring(2,4),month,day,gender,rand.nextInt(1,1000000)); // 혹은 rand.nextInt(999999)+1
     }
 }
