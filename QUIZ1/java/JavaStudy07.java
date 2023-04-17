@@ -6,6 +6,7 @@
 * 작성자 : 조하나
 */
 import java.util.*;
+
 public class JavaStudy07
 {
     static Scanner scan = new Scanner(System.in);
@@ -15,9 +16,19 @@ public class JavaStudy07
     public static int[] gen_lotto() //로또 생성기
     {
         int[] lotto_set = new int[lotto_num];
-        for(int i=0; i<lotto_num; i++)
-            lotto_set[i] = rand.nextInt(1,46);
 
+        for(int i=0; i<lotto_num; i++)
+        {
+                lotto_set[i] = rand.nextInt(1, 46);
+
+                // 중복체크
+                for (int j = 0; j < i; j++)
+                    if (lotto_set[j] == lotto_set[i])
+                        i--;
+        }
+
+        //정렬
+        Arrays.sort(lotto_set);
         return lotto_set;
     }
 
