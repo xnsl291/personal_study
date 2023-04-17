@@ -18,7 +18,7 @@ public class JavaStudy06
     public static void main(String[] args)
     {
         int  max = 0 , winner = 0;
-        int[] record = new int[4];
+        int[] record = new int[candi_num];
         String[] candidate = new String[]{"이재명","윤석열","심상정","안철수"};
 
         for (int voter=1; voter<=total_voter ; voter++)
