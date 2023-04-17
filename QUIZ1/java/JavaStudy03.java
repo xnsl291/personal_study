@@ -46,7 +46,15 @@ public class JavaStudy03 {
             welfare_merit = scan.next();
         }
 
-        int fee = age<3 ? 0 : (age <13 || entrance>=17) ? SPECIAL_D : (nation_merit=="y" || welfare_merit=="y") ? BASIC_D : ORIGINAL;
+        int fee = ORIGINAL; 
+        
+        if (age < 3)
+            fee = 0;
+        else if (age<13 || entrance>=17) 
+            fee = SPECIAL_D;
+        else if (nation_merit=="y" || welfare_merit=="y") 
+            fee = BASIC_D;
+        
         System.out.printf("입장료: %d",fee);
     }
 
